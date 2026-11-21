@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers Masterclass UI - Responsive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f6f2;
+            /* Pale greenish-gray background as requested */
+        }
+    </style>
+</head>
+
+<body class="min-h-screen text-gray-800 flex flex-col">
+
+    <nav class="bg-[#1b365d] text-white px-4 py-3 sm:px-6 shadow-md w-full">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-baseline space-x-3 sm:space-x-4 w-full sm:w-auto justify-between sm:justify-start">
+                <span class="text-lg sm:text-xl font-semibold tracking-wide whitespace-nowrap">Assignments</span>
+                <span class="text-xs sm:text-sm font-light text-gray-300 whitespace-nowrap">Chapter 26 - 30</span>
+            </div>
+            <div class="flex space-x-2 w-full sm:w-auto">
+                <input type="text" placeholder="Search"
+                    class="px-3 py-2 sm:py-1.5 rounded-sm text-sm text-gray-900 outline-none flex-grow sm:w-64 bg-white shadow-inner" />
+                <button
+                    class="px-4 py-2 sm:py-1.5 rounded-sm text-sm font-medium border border-[#0d9b8e] text-[#0d9b8e] hover:bg-[#132847] hover:text-white transition-colors shadow-sm flex-shrink-0">
+                    Search
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="w-full max-w-6xl mx-auto p-8 flex-grow">
+
+        <div class="text-center mb-8">
+            <h1 class="text-xl sm:text-2xl font-medium text-gray-800 mb-4">Chapter # 26 - 30 | Numbers, Integers &
+                Decimals</h1>
+            <hr class="border-t border-gray-300 w-full">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+
+            <!-- Top Left: Input Section -->
+            <div class="flex flex-col">
+                <h3 class="text-center text-lg font-semibold mb-3 text-gray-700">Input</h3>
+                <div
+                    class="border border-gray-300 rounded p-4 sm:p-5 flex flex-col justify-center bg-transparent h-full min-h-[110px]">
+                    <div class="flex border border-gray-300 rounded overflow-hidden bg-white w-full">
+                        <input type="text" placeholder="Type your text here"
+                            class="flex-1 py-2.5 px-4 outline-none text-gray-700 text-sm w-full bg-transparent"
+                            id="input">
+                        <button
+                            class="px-5 border-l border-gray-300 bg-gray-50 text-gray-600 hover:bg-gray-100 transition-colors text-sm font-medium"
+                            onclick="clearIn()">Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Right: Original Number Section -->
+            <div class="flex flex-col">
+                <h3 class="text-center text-lg font-semibold mb-3 text-gray-700">Original Number</h3>
+                <div
+                    class="bg-[#1c385c] text-white rounded p-6 flex items-center justify-center shadow-md h-full min-h-[110px]">
+                    <span class="text-4xl font-medium tracking-wide break-all text-center">25.12345</span>
+                </div>
+            </div>
+
+            <!-- Bottom Left: Buttons Section -->
+            <div class="flex flex-col h-full">
+                <h3 class="text-center text-lg font-semibold mb-3 text-gray-700">Buttons</h3>
+                <div
+                    class="border border-gray-300 rounded p-5 sm:p-6 bg-transparent flex-grow flex flex-col justify-between">
+                    <div class="grid grid-cols-2 gap-2 mb-4">
+                        <!-- ==============================round======================== -->
+                        <button onclick="roundNum()"
+                            class="bg-[#ef4444] text-white py-2 px-2 text-sm rounded shadow-sm hover:bg-red-600 active:scale-[0.98] transition-all">Round
+                            A Number</button>
+
+                        <!-- ===============================ceil======================= -->
+                        <button onclick="ceilNum()"
+                            class="bg-[#ef4444] text-white py-2 px-2 text-sm rounded shadow-sm hover:bg-red-600 active:scale-[0.98] transition-all">Ceil
+                            A Number</button>
+                        <!-- ============================floor========================== -->
+                        <button onclick="floorNum()"
+                            class="bg-[#ef4444] text-white py-2 px-2 text-sm rounded shadow-sm hover:bg-red-600 active:scale-[0.98] transition-all">Floor
+                            A Number</button>
+                        <!-- =============================Generate A Random Number========================== -->
+                        <button onclick="randomNum()"
+                            class="bg-[#ef4444] text-white py-2 px-2 text-sm rounded shadow-sm hover:bg-red-600 active:scale-[0.98] transition-all">Generate
+                            A Random Number</button>
+                        <!-- ============================throw dice========================== -->
+                        <button onclick="dice()"
+                            class="bg-[#ef4444] text-white py-2 px-2 text-sm rounded shadow-sm hover:bg-red-600 active:scale-[0.98] transition-all">Throw
+                            A Dice</button>
+                        <!-- // =====================random password==================== -->
+                        <button onclick="password()"
+                            class="bg-[#ef4444] text-white py-2 px-2 text-sm rounded shadow-sm hover:bg-red-600 active:scale-[0.98] transition-all">Generate
+                            A Strong Password</button>
+
+
+                    </div>
+                    <!-- Centered bottom button -->
+                    <div class="flex justify-center mt-2">
+                        <button onclick="gst()"
+                            class="bg-[#ef4444] text-white py-2 px-8 text-sm rounded shadow-sm hover:bg-red-600 active:scale-[0.98] transition-all">Calculate
+                            GST</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Right: Output / Result Section -->
+            <div class="flex flex-col h-full relative pb-12">
+                <h3 class="text-center text-lg font-semibold mb-3 text-gray-700">Output / Result</h3>
+                <div class="border border-gray-300 rounded p-6 bg-transparent flex-grow flex flex-col items-center justify-center text-gray-500"
+                    id="output">
+                    <!-- Output area is ready for content -->
+                </div>
+                <!-- Clear Output button positioned below to align borders perfectly -->
+                <div class="absolute bottom-0 left-0 right-0 flex justify-center">
+                    <button
+                        class="border border-gray-400 bg-white text-gray-600 hover:bg-gray-50 px-4 py-1.5 rounded text-sm transition-colors shadow-sm font-medium"
+                        onclick="clearOut()">Clear Output</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-[#1b365d] text-white text-center py-2.5 text-xs sm:text-sm mt-auto shadow-inner w-full">
+        <p>&copy; &copy; 2026. All rights revered</p>
+    </footer>
+
+</body>
+<script src="script.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</html>
